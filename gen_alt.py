@@ -2,32 +2,33 @@ from PIL import Image, ImageFont, ImageDraw
 
 import common
 
-FONT = "resources/florentine regular.ttf"
+OUTPUT = 'alt_out.png'
+FONT = "resources/Alt.ttf"
 
-TOP_COLOUR = (255, 199, 0)
-BOTTOM_COLOUR = (254, 254, 200)
+LEFT_COLOUR = (19, 8, 100)
+RIGHT_COLOUR = (70, 157, 236)
 
-user_text = "Test".upper()
-# Todo - Make first bigger
+
+user_text = "Test"
 
 # Create temporary image to determine length of text
 temp_image = Image.new("RGBA", (1, 1), (0, 0, 0))
 usr_font = ImageFont.truetype(FONT, 500)
 
 text_width, text_height = ImageDraw.Draw(temp_image).textsize(user_text, usr_font)
-output_size = (text_width + 20, text_height + 30)
+output_size = (text_width + 20, text_height + 50)
 
 # Create background
-bg = Image.new('RGBA', output_size, (0, 0, 0))
+bg = Image.new('RGBA', output_size, (255, 255, 255))
 
 # Create gradient
-gradient = common.create_vertical_gradient(TOP_COLOUR, BOTTOM_COLOUR, output_size)
+gradient = common.create_horizontal_gradient(LEFT_COLOUR, RIGHT_COLOUR, output_size)
 
 # Apply gradient to text
 common.mask_text(bg, user_text, usr_font, gradient, output_size)
 
-# Save output
+# Resample and save output
 common.resample_image(bg, output_size)
-bg.save('frasier_out.png', 'PNG')
+bg.save(OUTPUT, 'PNG')
 
-# TODO - skyline
+# TODO - add weird bar thing
