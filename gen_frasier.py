@@ -7,7 +7,7 @@ FONT = "resources/florentine regular.ttf"
 TOP_COLOUR = (255, 199, 0)
 BOTTOM_COLOUR = (254, 254, 200)
 
-user_text = "altran".upper()
+user_text = "Test".upper()
 # Todo - Make first bigger
 
 # Create temporary image to determine length of text
