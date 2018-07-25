@@ -2,6 +2,15 @@ from PIL import Image, ImageFont, ImageDraw
 
 # TODO - document
 
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+
+
+def determine_image_size(text, font):
+    temp_image = Image.new("RGBA", (1, 1), BLACK)
+
+    return ImageDraw.Draw(temp_image).textsize(text, font)
+
 
 def interpolate(f_co, t_co, interval):
     det_co = [(t - f) / interval for f, t in zip(f_co, t_co)]
