@@ -2,14 +2,14 @@ from PIL import Image, ImageFont, ImageDraw
 
 import common
 
-OUTPUT = 'altran_out.png'
-FONT = "resources/Altran.ttf"
+OUTPUT = 'alt_out.png'
+FONT = "resources/Alt.ttf"
 
 LEFT_COLOUR = (19, 8, 100)
 RIGHT_COLOUR = (70, 157, 236)
 
 
-user_text = "frasssier"
+user_text = "Test"
 
 # Create temporary image to determine length of text
 temp_image = Image.new("RGBA", (1, 1), (0, 0, 0))
