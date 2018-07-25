@@ -16,6 +16,7 @@ FONT_SIZE = 500
 # -----------------------------------------------------------------------------
 
 user_text = "Test".upper()
+usr_font = ImageFont.truetype(FONT, FONT_SIZE)
 # Todo - Make first bigger
 
 text_width, text_height = common.determine_text_size(user_text, usr_font)

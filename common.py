@@ -6,7 +6,7 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
 
-def determine_image_size(text, font):
+def determine_text_size(text, font):
     temp_image = Image.new("RGBA", (1, 1), BLACK)
 
     return ImageDraw.Draw(temp_image).textsize(text, font)
